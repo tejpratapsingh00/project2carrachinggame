@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+
+.game-container{
+    position:relative;
+    width:400px;
+    height:600px;
+    background:#2c2c2c;
+    overflow:hidden;
+    border:4px solid #444;
+    box-shadow:0 0 30px rgba(0,0,0,0.8);
+}
+
+
+.start-screen{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to bottom,#000,#222);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+    text-align:center;
+}
+
+.start-screen h1{
+    font-size:32px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+}
+
+.start-screen p{
+    margin:4px 0;
+    font-size:14px;
+}
+
+.start-screen button{
+    margin-top:20px;
+    padding:12px 30px;
+    font-size:16px;
+    border:none;
+    cursor:pointer;
+    background:#ffcc00;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+
+.score-panel{
+    position:absolute;
+    top:10px;
+    left:10px;
+    color:white;
+    z-index:5;
+    font-size:14px;
+    background:rgba(0,0,0,0.6);
+    padding:8px 12px;
+    border-radius:6px;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.score-panel div{
+    margin:4px 0;
+}
+
+
+.game-area{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:#555;
+    overflow:hidden;
+}
+
+
+.road-line{
+    position:absolute;
+    width:10px;
+    height:100px;
+    background:white;
+    left:50%;
+    transform:translateX(-50%);
+    opacity:0.8;
+}
+
+.road-line:nth-child(1){ top:0; }
+.road-line:nth-child(2){ top:150px; }
+.road-line:nth-child(3){ top:300px; }
+.road-line:nth-child(4){ top:450px; }
+
+
+.car{
+    position:absolute;
+    width:50px;
+    height:90px;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+.player-car{
+    bottom:20px;
+    left:175px;
+    background-image:url("../assets/cars/player.png");
+}
+
+.enemy-car{
+    background-image:url("../assets/cars/enemy1.png");
+}
+
+
+.game-container::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    box-shadow:inset 0 0 50px rgba(0,0,0,0.7);
+    pointer-events:none;
+}
